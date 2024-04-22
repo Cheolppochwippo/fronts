@@ -1,0 +1,14 @@
+/* PaymentSuccessPage.css */
+
+.payment-success-container {
+  width: 70%; /* 적당한 너비로 조절 */
+  height: 800px; /* 높이 설정 */
+  margin: 100px auto;
+  background-color: #fdc24b; /* 연주황색 배경색 */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  display: flex; /* 내부 요소를 세로 방향으로 정렬하기 위해 flex 사용 */
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+}

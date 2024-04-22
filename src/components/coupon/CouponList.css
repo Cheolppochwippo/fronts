@@ -1,0 +1,58 @@
+.coupon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .coupon-item {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 30%; /* 쿠폰 박스의 가로 크기 줄임 */
+    box-sizing: border-box; /* 패딩이 포함되도록 설정 */
+  }
+  .coupon-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .coupon-content > *:not(:last-child) {
+    margin-right: 20px; /* 쿠폰 할인율 텍스트와 버튼 사이 공간 추가 */
+  }
+  
+  .coupon-header img {
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .coupon-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+  
+  .discount {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  
+  .action {
+    background-color: #ddd;
+    color: #333;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+  }
+  
+  .coupon-period {
+    text-align: right;
+    font-size: 20px;
+    color: #777;
+  }

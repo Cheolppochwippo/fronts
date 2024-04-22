@@ -1,0 +1,60 @@
+/* TotalOrderList.css */
+
+.total-orders-container {
+  margin: 20px;
+}
+
+.total-orders-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.order-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.order-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.order-card-content {
+  margin-bottom: 10px;
+}
+
+.order-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.payment-status {
+  font-size: 16px;
+}
+
+.payment-amount {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.order-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #0056b3;
+}
+
+.no-orders-message {
+  font-size: 16px;
+  color: #999;
+}

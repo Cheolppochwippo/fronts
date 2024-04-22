@@ -1,0 +1,104 @@
+.payment-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.payment-card {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-content {
+  padding: 20px;
+}
+
+.payment-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+}
+
+.payment-button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #25d6da; /* Green background */
+  border: none;
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s; /* Add a hover effect */
+}
+
+/* Change background color of buttons on hover */
+.pagination button:hover {
+  background-color: #25d6da;
+}
+
+/* Add an active class to highlight the current page */
+.pagination button.active {
+  background-color: #f17226; /* Blue */
+}
+
+/* Style for previous and next buttons */
+.pagination button.prev-next {
+  background-color: #f17226; /* Blue */
+}
+
+/* Style for previous and next button icons */
+.pagination button.prev-next i {
+  color: white;
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Style for disabled previous and next buttons */
+.pagination button.prev-next:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
