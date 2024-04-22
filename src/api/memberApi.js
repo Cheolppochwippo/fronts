@@ -23,8 +23,9 @@ export const loginPost = async (data) => {
   };
   console.log(`${host}/login`)
   const res = await axios.post(`${host}/login`, body);
+  console.log(res)
   const token = res.headers['authorization'].split("Bearer ")[1];
-  console.log(res,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+  console.log(token)
   
   if (token) {
     localStorage.setItem('jwt',token);
