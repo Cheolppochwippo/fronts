@@ -6,7 +6,7 @@ import FetchingModal from "../common/FetchingModal";
 import useCustomCart from "../../hooks/useCustomCart";
 import useCustomLogin from "../../hooks/useCustomLogin";
 import { addToCart } from "../../api/cartApi";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const host = API_SERVER_HOST;
 
@@ -30,6 +30,8 @@ const ReadComponent = ({ productId }) => {
   const { changeCart, cartItems } = useCustomCart();
   const { loginState } = useCustomLogin();
   const [quantity, setQuantity] = useState(1);
+  const jwt = localStorage.getItem("jwt");
+  const isLoggedIn = !!jwt;
 
   useEffect(() => {
     setFetching(true);
@@ -46,41 +48,55 @@ const ReadComponent = ({ productId }) => {
   }, [productId]);
 
   const handleClickAddCart = () => {
-    let addedItem = cartItems.filter(
-      (item) => item.productId === parseInt(productId)
-    )[0];
-
-    if (addedItem) {
-      if (window.confirm("이미 추가된 상품입니다. 추가하시겠습니까?") === false) {
-        return;
-      }
-      addToCart(productId, addedItem.qty + quantity)
-        .then((data) => {
-          console.log("Add to cart success:", data);
-          if (window.confirm('장바구니에 상품이 추가되었습니다. \n장바구니 페이지로 이동하시겠습니까?')) {
-            navigate('/carts/list');
-          }
-        })
-        .catch((error) => {
-          console.error("Add to cart error:", error);
-          // 에러 처리
-        });
+    if (!isLoggedIn) {
+      navigate("/member/login");
+      return;
     } else {
-      addToCart(productId, quantity)
-        .then((data) => {
-          console.log("Add to cart success:", data);
-          //alert("상품이 장바구니에 담겼습니다.");
-          if (window.confirm('장바구니에 상품이 추가되었습니다. \n장바구니 페이지로 이동하시겠습니까?')) {
-            navigate('/carts/list');
-          }
-        })
-        .catch((error) => {
-          console.error("Add to cart error:", error);
-          // 에러 처리
-        });
+      let addedItem = cartItems.filter(
+        (item) => item.productId === parseInt(productId)
+      )[0];
+
+      if (addedItem) {
+        if (
+          window.confirm("이미 추가된 상품입니다. 추가하시겠습니까?") === false
+        ) {
+          return;
+        }
+        addToCart(productId, addedItem.qty + quantity)
+          .then((data) => {
+            console.log("Add to cart success:", data);
+            if (
+              window.confirm(
+                "장바구니에 상품이 추가되었습니다. \n장바구니 페이지로 이동하시겠습니까?"
+              )
+            ) {
+              navigate("/carts/list");
+            }
+          })
+          .catch((error) => {
+            console.error("Add to cart error:", error);
+            // 에러 처리
+          });
+      } else {
+        addToCart(productId, quantity)
+          .then((data) => {
+            console.log("Add to cart success:", data);
+            //alert("상품이 장바구니에 담겼습니다.");
+            if (
+              window.confirm(
+                "장바구니에 상품이 추가되었습니다. \n장바구니 페이지로 이동하시겠습니까?"
+              )
+            ) {
+              navigate("/carts/list");
+            }
+          })
+          .catch((error) => {
+            console.error("Add to cart error:", error);
+            // 에러 처리
+          });
+      }
     }
   };
-
 
   return (
     <div className="border-2 border-sky-200 mt-10 m-2 p-4">
@@ -164,7 +180,8 @@ const ReadComponent = ({ productId }) => {
         </div>
       </div>
       <div className="flex justify-end p-4">
-        <button type="button" 
+        <button
+          type="button"
           className="inline-block rounded p-4 m-2 text-xl w-32  text-white bg-green-500"
           onClick={handleClickAddCart}
         >
@@ -175,7 +192,7 @@ const ReadComponent = ({ productId }) => {
           className="rounded p-4 m-2 text-xl w-32 text-white bg-blue-500"
           onClick={moveToList}
         >
-          즉시 구매하기 
+          즉시 구매하기
         </button>
       </div>
     </div>
