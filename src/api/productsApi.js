@@ -9,14 +9,24 @@ export const getOne = async (pno) => {
   return res.data
   }
 
+// export const getList = async ({ page, size }) => {
+//     const response = await axios.get(`${host}`, {
+//       params: {
+//         page,
+//         size,
+//       },
+//     });
+//     return response.data.data.productList; // productList 필드 반환
+//   };
+
 export const getList = async ({ page, size }) => {
-    const response = await axios.get(`${host}`, {
+    const response = await axios.get('/api/products', {
       params: {
         page,
         size,
       },
     });
-    return response.data.data.productList; // productList 필드 반환
+    return response.data.data.productList; 
   };
 
 
