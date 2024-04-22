@@ -17,7 +17,7 @@ export const signup = async (signupParam) => {
   };
 
 export const loginPost = async (data) => {
-  console.log(data+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  console.log(data.username+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
   const body = {
     username: data.username,
     password: data.pw
