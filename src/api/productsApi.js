@@ -26,6 +26,7 @@ export const getList = async ({ page, size }) => {
         size,
       },
     });
+  console.log(response)
     return response.data.data.productList; 
   };
 
