@@ -20,8 +20,7 @@ export const getOne = async (pno) => {
 //   };
 
 export const getList = async ({ page, size }) => {
-  console.log('${host}')
-    const response = await axios.get('${host}', {
+    const response = await axios.get(`${host}`, {
       params: {
         page,
         size,
