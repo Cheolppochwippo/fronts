@@ -1,21 +1,22 @@
 import BasicMenu from "../../menus/BasicMenu";
-import TotalOrderComponent from "../../components/payment/TotalOrderComponent"
+import TotalOrderComponent from "../../components/payment/TotalOrderComponent";
 import CartItemComponent from "../../components/cart/CartItemComponent";
 
 const TotalOrderPage = () => {
   return (
-      <div className="fixed top-0 left-0 z-[1055] flex flex-col h-full w-full">
-        <BasicMenu />
-        
-
-        <div className="w-full flex flex-wrap  h-full justify-center  items-center border-2">
-        
-         <CartItemComponent/>
-        
-          <TotalOrderComponent />
+    <div className="flex flex-col h-screen">
+      <BasicMenu />
+      <div className="flex-1 flex justify-start">
+        <div className="w-full max-w-8xl bg-white shadow-md rounded-lg p-4 ml-0">
+          <div className="p-4">
+            <CartItemComponent />
+          </div>
+          <div className="p-4 bg-gray-100">
+            <TotalOrderComponent />
+          </div>
         </div>
       </div>
+    </div>
   );
 };
-
 export default TotalOrderPage;
