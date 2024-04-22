@@ -17,7 +17,7 @@ export const signup = async (signupParam) => {
   };
 
 export const loginPost = async (data) => {
-
+  console.log(data+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
   const body = {
     username: data.username,
     password: data.pw
@@ -25,6 +25,7 @@ export const loginPost = async (data) => {
 
   const res = await axios.post(`${host}/login`, body);
   const token = res.headers['authorization'].split("Bearer ")[1];
+  console.log(res,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
   
   if (token) {
     localStorage.setItem('jwt',token);

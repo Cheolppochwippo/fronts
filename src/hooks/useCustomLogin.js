@@ -36,7 +36,6 @@ const useCustomLogin = () => {
 
   const doLogin = async (loginParam) => {
     //----------로그인 함수
-    console.log(loginParam)
 
 
     const action = await dispatch(loginPostAsync(loginParam));
