@@ -20,7 +20,7 @@ export const getOne = async (pno) => {
 //   };
 
 export const getList = async ({ page, size }) => {
-    const response = await axios.get('/api/products', {
+    const response = await axios.get('${host}', {
       params: {
         page,
         size,
