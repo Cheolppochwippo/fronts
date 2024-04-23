@@ -7,8 +7,13 @@ export const getCoupons = async () => {
   return res.data;
 };
 
-export const createCoupon = async () => {
-  const res = await axios.post(`${API_SERVER_HOST}/coupons`);
+export const createCoupon = async (request) => {
+  const header = "Bearer " +localStorage.getItem('jwt');
+  const res = await axios.post(`${API_SERVER_HOST}/coupons`, request, {
+    headers: {
+      Authorization: header,
+    },
+  });
   return res.data;
 };
 
