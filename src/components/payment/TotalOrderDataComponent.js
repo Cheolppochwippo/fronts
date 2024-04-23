@@ -83,7 +83,7 @@ function TotalOrderDetailPage() {
             <PaymentCancelPopup paymentKey={totalOrder.paymentKey}
                                 onClose={handlePopupClose}/>
         )}
-        <Link to="/totalOrders">
+        <Link to="/member/mypage">
           <button className="button">돌아가기</button>
         </Link>
       </div>

@@ -46,7 +46,7 @@ function PaymentDetailPage() {
             <p>결제 키: {payment.paymentKey}</p>
             <p>결제 상태: {payment.statement}</p>
           </div>
-          <Link to="/payments">
+          <Link to="/member/mypage">
             <button className="button">돌아가기</button>
           </Link>
         </div>
