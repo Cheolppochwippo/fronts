@@ -92,6 +92,9 @@ const ReadComponent = ({ productId }) => {
         })
         .catch((error) => {
           console.error("Add to cart error:", error);
+          window.confirm(
+              "남은 재고량 보다 많은 양을 담으셨습니다!"
+          )
           // 에러 처리
         });
       }
