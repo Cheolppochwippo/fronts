@@ -162,7 +162,7 @@ const SignupComponent = () => {
           />
         </div> */}
         <div className="mb-4">
-          <label className="block font-bold mb-2">이용약관 동의</label>
+          <label className="block font-bold mb-2">(선택)이벤트성 문자 발송 수신 동의</label>
           <div>
             <input
               type="checkbox"
@@ -176,8 +176,6 @@ const SignupComponent = () => {
               동의합니다.
             </label>
             <p className="text-gray-600">
-              (선택)이벤트성 문자 발송 수신 동의
-              <br/>
               저희는 귀하에게 이벤트, 프로모션 소식, 할인 혜택 등의 정보를 제공하기 위해 문자 메시지를 발송하고자 합니다. 귀하의 개인 정보를 보호하며, 귀하가 제공하는 정보는 오직 이벤트 및 프로모션 소식 발송에만 사용됩니다.
             </p>
           </div>
