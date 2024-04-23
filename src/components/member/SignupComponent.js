@@ -57,7 +57,7 @@ const SignupComponent = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="passwordConfirm" className="block font-bold mb-2">
-            비밀번호확인*
+            비밀번호 확인*
           </label>
           <input
             id="passwordConfirm"
@@ -97,7 +97,7 @@ const SignupComponent = () => {
           <input
             id="phoneNumber"
             type="tel"
-            placeholder="주신 번역대로 수정해주세요."
+            placeholder="휴대폰 번호를 입력해주세요."
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             className="w-full p-2 border border-gray-300 rounded"

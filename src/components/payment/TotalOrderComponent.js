@@ -58,7 +58,7 @@ const TotalOrderComponent = () => {
         </div>
         <div className="address-container">
           <label htmlFor="address" className="address-label">
-            받으실 주소
+            배송 정보
           </label>
           <input
               className="address-input"
@@ -68,7 +68,7 @@ const TotalOrderComponent = () => {
               onChange={handleChange}
           />
         </div>
-        <div className="payment-button-container">
+        <div className="payment-button-container  ">
           <button className="payment-button" onClick={addOrder}>
             결제하기
           </button>
