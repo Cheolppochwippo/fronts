@@ -3,15 +3,17 @@ import BasicLayout from "../../layouts/BasicLayout";
 
 const AddPage = () => {
   return (
-      <BasicLayout>
-        <div
-            className="fixed top-0 left-0 z-[1055] flex flex-col h-full w-full">
-          <div
-              className="w-full flex flex-wrap h-full justify-center items-center border-2">
-            <AddComponent/>
-          </div>
-        </div>
-      </BasicLayout>
+  <BasicLayout>
+    <div className="text-black font-extrabold -mt-10 mt-4">
+      쿠폰 작성
+    </div>
+    <div className="w-full flex m-2 p-2 ">
+
+    </div>
+    <div className="flex flex-wrap w-full ">
+      <AddComponent/>
+    </div>
+  </BasicLayout>
   );
 };
 
