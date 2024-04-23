@@ -8,6 +8,7 @@ const BasicMenu = () => {
   const jwt = localStorage.getItem("jwt");
   const isLoggedIn = !!jwt;
   const isSeller = isLoggedIn && jwtDecode(jwt).role === "SELLER";
+  const isAdmin = isLoggedIn && jwtDecode(jwt).role === "ADMIN";
 
   return (
     <nav id="navbar" className="flex bg-blue-300">
@@ -37,6 +38,16 @@ const BasicMenu = () => {
             </>
           ) : (
             <></>
+          )}
+          {isAdmin ? ( //로그인한 사용자만 출력되는 메뉴
+              <>
+                <li className="pr-6 text-3xl mt-10">
+                  <Link to={"/addCoupons"}>AddCoupon</Link>
+                </li>
+              </>
+
+          ) : (
+              <></>
           )}
          
           {/* <li className="pr-6 text-3xl mt-10">

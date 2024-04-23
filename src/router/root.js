@@ -23,7 +23,8 @@ const TotalOrdersIndex = lazy(()=> import("../pages/payments/TotalOrdersPage"))
 const TotalOrderDetailIndex = lazy(()=> import("../pages/payments/TotalOrderDetailPage"))
 const CartsIndex = lazy(()=> import("../pages/cart/CartIndexPage"))
 const StoreIndex = lazy(()=> import("../pages/store/StoreIndexPage"))
-
+const CouponAddIndex = lazy(()=>
+import("../pages/coupons/AddPage"))
 
 const root = createBrowserRouter([
   {
@@ -80,6 +81,9 @@ const root = createBrowserRouter([
   }, {
     path: "totalOrders/:totalOrderId", // 동적 결제 ID를 받아오는 라우트
     element: <Suspense fallback={Loading}><TotalOrderDetailIndex /></Suspense>
+  },{
+    path:"addCoupons",
+    element:<Suspense fallback={Loading}><CouponAddIndex/></Suspense>
   }
 ]);
 export default root;

@@ -7,4 +7,9 @@ export const getCoupons = async () => {
   return res.data;
 };
 
+export const createCoupon = async () => {
+  const res = await axios.post(`${API_SERVER_HOST}/coupons`);
+  return res.data;
+};
+
 
