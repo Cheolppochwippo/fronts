@@ -205,13 +205,13 @@ const ReadComponent = ({ productId }) => {
           >
             장바구니 담기
           </button>
-          <button
-              type="button"
-              className="rounded p-4 m-2 text-xl w-32 text-white bg-blue-500"
-              onClick={moveToList}
-          >
-            즉시 구매하기
-          </button>
+          {/*<button*/}
+          {/*    type="button"*/}
+          {/*    className="rounded p-4 m-2 text-xl w-32 text-white bg-blue-500"*/}
+          {/*    onClick={moveToList}*/}
+          {/*>*/}
+          {/*  즉시 구매하기*/}
+          {/*</button>*/}
         </div>
       </div>
   );
