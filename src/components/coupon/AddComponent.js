@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {createCoupon} from "../../api/couponApi";
+import '/Add.css'
 
 const AddComponent = () => {
   const [requestParam, setRequestParam] = useState(
