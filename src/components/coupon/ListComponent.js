@@ -45,7 +45,7 @@ const ListComponent = () => {
             <span>{coupon.couponInfo}</span>
           </div>
           <div className="coupon-content">
-            <span className="discount">{coupon.discount}%</span>
+            <span className="discount">{coupon.discount*100}%</span>
             {/* <span className="action">적용하기</span> */}
             <span className="action" onClick={() => handleIssueCoupon(coupon.couponId)}>쿠폰받기</span>
           </div>
