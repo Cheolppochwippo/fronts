@@ -103,7 +103,7 @@ const ReadComponent = ({ productId }) => {
 
   return (
       <div className="border-2 border-sky-200 mt-10 m-2 p-4">
-        {fetching ? <FetchingModal /> : <></>}
+        {fetching ? <FetchingModal/> : <></>}
         <div className="flex justify-center mt-10">
           <div className="relative mb-4 flex w-full flex-wrap items-stretch">
             <div className="w-1/5 p-6 text-right font-bold">제품 사진</div>
@@ -115,7 +115,8 @@ const ReadComponent = ({ productId }) => {
                       className="w-full h-auto"
                   />
               ) : (
-                  <div className="bg-gray-200 h-48 flex items-center justify-center">
+                  <div
+                      className="bg-gray-200 h-48 flex items-center justify-center">
                     No Image
                   </div>
               )}
@@ -140,9 +141,17 @@ const ReadComponent = ({ productId }) => {
         </div>
         <div className="flex justify-center">
           <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">가격</div>
+            <div className="w-1/5 p-6 text-right font-bold">원가</div>
             <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
               {product.price}
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+            <div className="w-1/5 p-6 text-right font-bold">가격</div>
+            <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
+              {product.realPrice}
             </div>
           </div>
         </div>
@@ -183,20 +192,6 @@ const ReadComponent = ({ productId }) => {
             <div className="w-1/5 p-6 text-right font-bold">매장 설명</div>
             <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
               {product.storeInfo}
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">수량</div>
-            <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
-              <input
-                  type="number"
-                  min="1"
-                  value={quantity}
-                  onChange={(e) => setQuantity(parseInt(e.target.value))}
-                  className="w-full p-2 border border-gray-300 rounded"
-              />
             </div>
           </div>
         </div>

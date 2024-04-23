@@ -61,7 +61,7 @@ const ListComponent = () => {
                       <div className="text-center p-1">
                         이름: {product.productName}
                       </div>
-                      <div className="text-center p-1">가격: {product.price}</div>
+                      <div className="text-center p-1">가격: {product.realPrice}</div>
                     </div>
                   </div>
                 </div>
