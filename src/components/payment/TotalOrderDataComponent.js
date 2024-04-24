@@ -66,10 +66,10 @@ function TotalOrderDetailPage() {
                 <p>결제 시간: {new Date(totalOrder.modifiedAt).toLocaleString()}</p>
               </div>
           )}
-          <p>가격: {totalOrder.price} 원</p>
-          <p>할인 금액: {totalOrder.discount} 원</p>
-          <p>결제 총액: {totalOrder.priceAmount} 원</p>
+          <p>가격: {totalOrder.realPrice} 원</p>
+          <p>할인 금액: -{totalOrder.discount} 원</p>
           <p>배송 비용: {totalOrder.deliveryCost} 원</p>
+          <p>결제 총액: {totalOrder.priceAmount} 원</p>
           <p>주소: {totalOrder.address}</p>
         </div>
         {/* 팝업 창을 여는 버튼 추가 */}
