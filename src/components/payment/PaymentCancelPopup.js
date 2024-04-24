@@ -22,14 +22,19 @@ function PaymentCancelPopup({ paymentKey, onClose }) {
       <div className="popup">
         <button className="close-button" onClick={onClose}>X</button>
         <p>취소 사유를 입력하세요:</p>
-        <textarea
-            value={cancelReason}
-            onChange={(e) => setCancelReason(e.target.value)}
-            rows={4}
-        />
+        <div className="cancel-reason-input">
+      <textarea
+          className="cancel-reason-textarea"
+          placeholder="여기에 취소 사유를 작성해주세요"
+          value={cancelReason}
+          onChange={(e) => setCancelReason(e.target.value)}
+          rows={4}
+      />
+        </div>
         <button onClick={handleCancel}>결제 취소</button>
       </div>
   );
+
 }
 
 export default PaymentCancelPopup;
