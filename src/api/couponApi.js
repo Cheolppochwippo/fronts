@@ -9,11 +9,13 @@ export const getCoupons = async () => {
 
 export const createCoupon = async (request) => {
   const header = "Bearer " +localStorage.getItem('jwt');
+  console.log("AAAAAAAAAAAAAAAAAAAAAAAAA",request)
   const res = await axios.post(`${API_SERVER_HOST}/coupons`, request, {
     headers: {
       Authorization: header,
     },
   });
+  console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBB",res)
   return res.data;
 };
 
