@@ -59,17 +59,13 @@ export function SuccessPage() {
               <div className="textbox">{paymentResult?.data.orderName}</div>
             </div>
             <div className="result-box">
-              <div className="result-title">주문 아이디</div>
+              <div className="result-title">주문 번호</div>
               <div className="textbox">{paymentResult?.data.orderId}</div>
             </div>
             <div className="result-box">
               <div className="result-title">결제 금액:</div>
               <div className="textbox">{paymentResult?.data.totalAmount}원
               </div>
-            </div>
-            <div className="result-box">
-              <div className="result-title">결제 아이디</div>
-              <div className="textbox">{paymentResult?.data.paymentKey}</div>
             </div>
           </div>
           <button className="return-button" onClick={returnToHomePage}>돌아가기
