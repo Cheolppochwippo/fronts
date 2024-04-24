@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import { cancelPayment } from '../../api/tosspayment';
 
 function PaymentCancelPopup({ paymentKey, onClose }) {
   const [cancelReason, setCancelReason] = useState('');
+  const history = useHistory();
 
   const handleCancel = async () => {
     try {
@@ -10,6 +12,7 @@ function PaymentCancelPopup({ paymentKey, onClose }) {
       await cancelPayment({ paymentKey, cancelReason });
       alert('취소가 완료되었습니다.');
       onClose(); // 팝업을 닫습니다.
+      history.push("/member/mypage");
     } catch (error) {
       console.error('Error canceling payment:', error);
     }
