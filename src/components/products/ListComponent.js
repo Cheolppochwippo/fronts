@@ -15,9 +15,7 @@ const ListComponent = () => {
     setFetching(true);
     getList({ page: page - 1, size: 10 })
     .then((data) => {
-      console.log(page);
-      setServerData(data); // productList 배열 할당
-      console.log(data);
+      setServerData(data);
     })
     .catch((error) => {
       console.error(error);
@@ -29,7 +27,7 @@ const ListComponent = () => {
 
   return (
       <div className="border-2 border-blue-100 mt-10 mr-2 ml-2">
-        {fetching ? <FetchingModal /> : <></>}
+        {fetching ? <FetchingModal /> : null}
         <div className="flex flex-wrap mx-auto p-6">
           {serverData.map((product, index) => (
               <Link
@@ -38,7 +36,7 @@ const ListComponent = () => {
                   className="w-1/2 p-1 rounded shadow-md border-2"
               >
                 <div className="flex flex-col h-full">
-                  <div className="relative w-full h-100"> {/* 이미지 높이를 100으로 변경 */}
+                  <div className="relative w-full h-100">
                     {product.imageUrls && product.imageUrls.length > 0 ? (
                         <img
                             src={product.imageUrls[0]}
@@ -60,9 +58,11 @@ const ListComponent = () => {
                       <div className="text-center p-1">
                         이름: {product.productName}
                       </div>
-                      <div className="text-center p-1">가격: {product.price}</div>
+                      <div className="text-center p-1">가격: {product.price}원</div>
                       {product.discount > 0 && (
-                          <div className="text-center p-1">할인중!! 현재 본 제품은 {product.discount}원 할인하고 있습니다!</div>
+                          <div className="text-center p-1">
+                            할인중!! 현재 본 제품은 {product.discount}원 할인하고 있습니다!
+                          </div>
                       )}
                     </div>
                   </div>
