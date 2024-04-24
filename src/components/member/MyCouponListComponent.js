@@ -28,7 +28,7 @@ const MyCouponListComponent = () => {
             <span>{coupon.couponInfo}</span>
           </div>
           <div className="coupon-content">
-            <span className="discount">{coupon.discount}%</span>
+            <span className="discount">{coupon.discount*100}%</span>
           </div>
           <div className="coupon-period">사용 기한: {coupon.effectiveDate ? coupon.effectiveDate.substring(0, 10) : ''}</div>
         </div>
