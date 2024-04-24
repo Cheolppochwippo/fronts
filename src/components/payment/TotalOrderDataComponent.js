@@ -67,7 +67,7 @@ function TotalOrderDetailPage() {
               </div>
           )}
           <p>가격: {totalOrder.price} 원</p>
-          <p>할인 금액: {totalOrder.discount} 원</p>
+          <p>할인 금액(쿠폰): {totalOrder.discount} 원</p>
           <p>배송 비용: {totalOrder.deliveryCost} 원</p>
           <p>결제 총액: {totalOrder.priceAmount} 원</p>
           <p>주소: {totalOrder.address}</p>
