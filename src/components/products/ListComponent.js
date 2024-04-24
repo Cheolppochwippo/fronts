@@ -57,11 +57,13 @@ const ListComponent = () => {
                   <div className="text-1xl m-1 p-2 w-full flex flex-col">
                     <div className="w-full overflow-hidden"></div>
                     <div className="bottom-0 font-extrabold bg-white">
-                      <div className="text-center p-1">상품ID: {product.id}</div>
                       <div className="text-center p-1">
                         이름: {product.productName}
                       </div>
-                      <div className="text-center p-1">가격: {product.realPrice}</div>
+                      <div className="text-center p-1">가격: {product.price}</div>
+                      {product.discount > 0 && (
+                          <div className="text-center p-1">할인중!! 현재 본 제품은 {product.discount}원 할인하고 있습니다!</div>
+                      )}
                     </div>
                   </div>
                 </div>

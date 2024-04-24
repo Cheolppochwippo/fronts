@@ -123,14 +123,6 @@ const ReadComponent = ({ productId }) => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-10">
-          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">제품 ID</div>
-            <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
-              {product.id}
-            </div>
-          </div>
-        </div>
         <div className="flex justify-center">
           <div className="relative mb-4 flex w-full flex-wrap items-stretch">
             <div className="w-1/5 p-6 text-right font-bold">제품명</div>
@@ -141,17 +133,25 @@ const ReadComponent = ({ productId }) => {
         </div>
         <div className="flex justify-center">
           <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">원가</div>
+            <div className="w-1/5 p-6 text-right font-bold">정가</div>
             <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
-              {product.price}
+              {product.realPrice}
             </div>
           </div>
         </div>
         <div className="flex justify-center">
           <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">가격</div>
+            <div className="w-1/5 p-6 text-right font-bold">할인</div>
             <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
-              {product.realPrice}
+              {product.discount}
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+            <div className="w-1/5 p-6 text-right font-bold">판매가</div>
+            <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
+              {product.price}
             </div>
           </div>
         </div>
