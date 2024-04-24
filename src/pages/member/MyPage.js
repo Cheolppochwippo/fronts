@@ -1,3 +1,8 @@
+import MyCouponListComponent from "../../components/member/MyCouponListComponent";
+import MyPageComponent from "../../components/member/MyPageComponent";
+import PaymentListPageComponent from "../../components/payment/PaymentListComponent";
+import TotalOrderListComponent from "../../components/payment/TotalOrderListComponent";
+import BasicMenu from "../../menus/BasicMenu";
 const MyPage = () => {
   return (
       <div className='fixed top-0 left-0 z-[1055] flex flex-col h-screen w-screen overflow-y-auto'>
@@ -17,3 +22,5 @@ const MyPage = () => {
       </div>
   );
 }
+
+export default MyPage;
