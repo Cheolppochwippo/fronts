@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { updateStore } from "../../api/storeApi";
 
-const updateComponent = () => {
+const UpdateComponent = () => {
   const [storeName, setStoreName] = useState('');
   const [info, setInfo] = useState('');
 
@@ -58,4 +58,4 @@ const updateComponent = () => {
   );
 };
 
-export default updateComponent;
+export default UpdateComponent;

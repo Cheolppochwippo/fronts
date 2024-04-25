@@ -1,5 +1,5 @@
-import StoreUpdateInfoComponent from "../../components/store/StoreUpdateInfoComponent";
 import StoreInfoComponent from "../../components/store/StoreInfoComponent";
+
 const UpdatePage = () => {
   return (
       <div className="p-4 w-full bg-white">
