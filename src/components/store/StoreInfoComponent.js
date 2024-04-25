@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import {viewStore} from "../../api/storeApi";
-import {getIssued} from "../../api/issuedApi";
 const StoreInfoComponent = () => {
   const [store, setStore] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getIssued()
-    .then(() => {
-      const st = viewStore()
-      console.log(st.data)
-      setStore(st.data);
+    viewStore()
+    .then((st) => {
+      setStore(st);
       console.log(store)
       setLoading(false);
     })
