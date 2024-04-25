@@ -9,7 +9,8 @@ const StoreInfoComponent = () => {
     getIssued()
     .then(() => {
       setStore(viewStore);
-      console.log(store,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+      console.log(store)
+      console.log(viewStore)
       setLoading(false);
     })
     .catch((error) => {
