@@ -9,6 +9,16 @@ export const getOne = async (pno) => {
   return res.data
   }
 
+export const getMyOne = async (pno) => {
+  const header = "Bearer " +localStorage.getItem('jwt');
+  const res = await axios.get(`${API_SERVER_HOST}/product/${pno}`, {
+    headers: {
+      Authorization: header,
+    },
+  });
+  return res.data
+}
+
 // export const getList = async ({ page, size }) => {
 //     const response = await axios.get(`${host}`, {
 //       params: {

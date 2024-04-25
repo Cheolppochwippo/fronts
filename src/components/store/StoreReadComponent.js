@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { deleteProduct, getOne } from "../../api/productsApi";
+import { deleteProduct, getMyOne } from "../../api/productsApi";
 import { API_SERVER_HOST } from "../../api/productsApi";
 import useCustomMove from "../../hooks/useCustomMove";
 import FetchingModal from "../common/FetchingModal";
@@ -32,7 +32,7 @@ const StoreReadComponent = ({ productId }) => {
 
   useEffect(() => {
     setFetching(true);
-    getOne(productId)
+    getMyOne(productId)
       .then((data) => {
         setProduct(data.data);
         setFetching(false);
@@ -157,7 +157,6 @@ const StoreReadComponent = ({ productId }) => {
         </div>
       </div>
       <div className="flex justify-end p-4">
-        
         <button
           type="button"
           className="inline-block rounded p-4 m-2 text-xl w-32 text-white bg-red-500"
