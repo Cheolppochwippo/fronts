@@ -18,21 +18,23 @@ const MyCouponListComponent = () => {
     });
   }, []);
 
-
-  const CouponList = ({ coupons }) => {
+  const CouponList = ({coupons}) => {
     return (
         <div className="coupon-list">
           {coupons.map((coupon, index) => (
               <div key={index} className="card coupon-item">
                 <div className="card-body">
                   <h5 className="card-title coupon-header">{coupon.couponInfo}</h5>
-                  <p className="card-text discount">{coupon.discount * 100}% 할인</p>
-                  <p className="card-text coupon-period">사용 기한: {coupon.effectiveDate ? coupon.effectiveDate.substring(0, 10) : ''}</p>
+                  <p className="card-text discount">{coupon.discount * 100}%
+                    할인</p>
+                  <p className="card-text coupon-period">사용
+                    기한: {coupon.effectiveDate ? coupon.effectiveDate.substring(
+                        0, 10) : ''}</p>
                 </div>
               </div>
           ))}
         </div>
     );
   };
-
+}
 export default MyCouponListComponent;
