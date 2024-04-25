@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import BasicLayout from "../../layouts/BasicLayout";
 import { useCallback } from "react";
+import { StoreInfoComponent } from "../../components/store/StoreInfoComponent"
 
 const StoreIndexPage = () => {
 
@@ -31,6 +32,9 @@ const StoreIndexPage = () => {
         className="text-xl m-1 p-2 w-20 font-extrabold  text-center underline"
         onClick={handleClickAdd}>
           ADD
+        </div>
+        <div>
+          <StoreInfoComponent/>
         </div>
          
       </div>
