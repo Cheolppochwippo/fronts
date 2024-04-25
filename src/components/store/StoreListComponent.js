@@ -29,48 +29,66 @@ const StoreListComponent = () => {
   }, [page]);
 
   return (
-    <div className="border-2 border-blue-100 mt-10 mr-2 ml-2">
-      {fetching ? <FetchingModal /> : <></>}
-      
-      <div className="flex flex-wrap mx-auto p-6">
-        {serverData.map((product, index) => (
-            <Link
-                to={`../read/${product.id}`}
-                key={product.id}
-                className="w-1/2 md:w-1/5 p-1 rounded shadow-md border-2"
-            >
-              <div className="flex flex-col h-full">
-                <div className="relative w-full h-100">
-                  {product.imageUrls && product.imageUrls.length > 0 ? (
-                      <img
-                          src={product.imageUrls[0]}
-                          alt={product.productName}
-                          className="object-cover w-full h-full"
-                      />
-                  ) : (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-                        No Image
+
+      <div className="border-2 border-blue-100 mt-10 mr-2 ml-2">
+        {fetching ? <FetchingModal/> : <></>}
+        <div className="flex justify-center">
+          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+            <div className="w-1/5 p-6 text-right font-bold">매장명</div>
+            <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
+              {product.storeName}
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+            <div className="w-1/5 p-6 text-right font-bold">매장 설명</div>
+            <div className="w-4/5 p-6 rounded-r border border-solid shadow-md">
+              {product.storeInfo}
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-wrap mx-auto p-6">
+          {serverData.map((product, index) => (
+              <Link
+                  to={`../read/${product.id}`}
+                  key={product.id}
+                  className="w-1/2 md:w-1/5 p-1 rounded shadow-md border-2"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="relative w-full h-100">
+                    {product.imageUrls && product.imageUrls.length > 0 ? (
+                        <img
+                            src={product.imageUrls[0]}
+                            alt={product.productName}
+                            className="object-cover w-full h-full"
+                        />
+                    ) : (
+                        <div
+                            className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                          No Image
+                        </div>
+                    )}
+                  </div>
+                  <div className="font-extrabold text-2xl p-2 w-full">
+                    {(page - 1) * 10 + (index + 1)}
+                  </div>
+                  <div className="text-1xl m-1 p-2 w-full flex flex-col">
+                    <div className="w-full overflow-hidden"></div>
+                    <div className="bottom-0 font-extrabold bg-white">
+                      <div className="text-center p-1">
+                        이름: {product.productName}
                       </div>
-                  )}
-                </div>
-                <div className="font-extrabold text-2xl p-2 w-full">
-                  {(page - 1) * 10 + (index + 1)}
-                </div>
-                <div className="text-1xl m-1 p-2 w-full flex flex-col">
-                  <div className="w-full overflow-hidden"></div>
-                  <div className="bottom-0 font-extrabold bg-white">
-                    <div className="text-center p-1">
-                      이름: {product.productName}
+                      <div className="text-center p-1">가격: {product.price}원
+                      </div>
                     </div>
-                    <div className="text-center p-1">가격: {product.price}원</div>
                   </div>
                 </div>
-              </div>
-            </Link>
-        ))}
+              </Link>
+          ))}
+        </div>
+        <PageComponent/>
       </div>
-      <PageComponent />
-    </div>
   );
 };
 
