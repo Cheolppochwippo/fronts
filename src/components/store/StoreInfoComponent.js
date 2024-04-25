@@ -8,7 +8,9 @@ const StoreInfoComponent = () => {
   useEffect(() => {
     getIssued()
     .then(() => {
-      setStore(viewStore());
+      const st = viewStore()
+      console.log(st)
+      setStore(st);
       console.log(store)
       setLoading(false);
     })
