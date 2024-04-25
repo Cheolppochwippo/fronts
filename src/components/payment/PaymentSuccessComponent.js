@@ -31,7 +31,8 @@ export function SuccessPage() {
 
       // 서버로 결제 승인 요청
       const result = await confirmPayment(newRequestParam);
-      setPaymentResult(result); // 결제 결과 설정
+      setPaymentResult(result.data); // 결제 결과 설정
+      console.log(paymentResult)
     } catch (error) {
       console.error("Error while confirming payment:", error);
       setMsg(error.response?.data?.msg || "알 수 없는 오류 발생");
@@ -57,23 +58,23 @@ export function SuccessPage() {
             <div className="result-box">
               <div className="result-title">주문명</div>
               <div
-                  className="textbox">{paymentResult?.data.jsonObject.orderName}</div>
+                  className="textbox">{paymentResult?.jsonObject.orderName}</div>
             </div>
             <div className="result-box">
               <div className="result-title">주문 번호</div>
               <div
-                  className="textbox">{paymentResult?.data.jsonObject.orderId}</div>
+                  className="textbox">{paymentResult?.jsonObject.orderId}</div>
             </div>
             <div className="result-box">
               <div className="result-title">결제 금액:</div>
               <div
-                  className="textbox">{paymentResult?.data.jsonObject.totalAmount}원
+                  className="textbox">{paymentResult?.jsonObject.totalAmount}원
               </div>
             </div>
             <div className="result-box">
               <div className="result-title">배송 주소:</div>
               <div
-                  className="textbox">{paymentResult?.data.address}
+                  className="textbox">{paymentResult?.address}
               </div>
             </div>
           </div>
