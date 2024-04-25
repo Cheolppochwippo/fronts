@@ -8,7 +8,7 @@ const StoreInfoComponent = () => {
     viewStore()
     .then((st) => {
       setStore(st);
-      console.log(store)
+      console.log(st)
       setLoading(false);
     })
     .catch((error) => {
