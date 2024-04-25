@@ -31,8 +31,8 @@ export function SuccessPage() {
 
       // 서버로 결제 승인 요청
       const result = await confirmPayment(newRequestParam);
+      console.log(result)
       setPaymentResult(result.data); // 결제 결과 설정
-      console.log(paymentResult)
     } catch (error) {
       console.error("Error while confirming payment:", error);
       setMsg(error.response?.data?.msg || "알 수 없는 오류 발생");
