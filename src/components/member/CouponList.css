@@ -1,0 +1,9 @@
+.coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* 각 카드 사이의 간격 */
+}
+
+.coupon-item {
+  border-radius: 10px;
+}
