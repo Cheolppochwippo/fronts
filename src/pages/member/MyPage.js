@@ -2,22 +2,27 @@ import MyCouponListComponent from "../../components/member/MyCouponListComponent
 import MyPageComponent from "../../components/member/MyPageComponent";
 import PaymentListPageComponent from "../../components/payment/PaymentListComponent";
 import TotalOrderListComponent from "../../components/payment/TotalOrderListComponent";
+import UserInfoComponent from "../../components/member/UserInfoComponent"
 import BasicMenu from "../../menus/BasicMenu";
 const MyPage = () => {
   return (
-      <div className='fixed top-0 left-0 z-[1055] flex flex-col h-screen w-screen overflow-y-auto'>
-        <BasicMenu />
+      <div
+          className='fixed top-0 left-0 z-[1055] flex flex-col h-screen w-screen overflow-y-auto'>
+        <BasicMenu/>
         <div className="w-full max-w-screen-lg mx-auto p-4">
-          <MyPageComponent />
+          <MyPageComponent/>
         </div>
         <div className="w-full max-w-screen-lg mx-auto p-4">
-          <MyCouponListComponent />
+          <UserInfoComponent/>
         </div>
         <div className="w-full max-w-screen-lg mx-auto p-4">
-          <TotalOrderListComponent />
+          <MyCouponListComponent/>
         </div>
         <div className="w-full max-w-screen-lg mx-auto p-4">
-          <PaymentListPageComponent />
+          <TotalOrderListComponent/>
+        </div>
+        <div className="w-full max-w-screen-lg mx-auto p-4">
+          <PaymentListPageComponent/>
         </div>
       </div>
   );

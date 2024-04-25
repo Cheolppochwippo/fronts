@@ -44,8 +44,19 @@ export const signupPost = async (data) => {
     consent : data.consent
 
   };
-  const res = await axios.post(`${host}/signup`, body);
+  const res = await axios.post(`${host}/signup/userTest`, body);
   
+  return res.data
+}
+
+export const viewUserInfo = async () => {
+  const header = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.get(`${host}/mypage`, {
+    headers: {
+      Authorization: header,
+    },
+  });
+
   return res.data
 }
 
