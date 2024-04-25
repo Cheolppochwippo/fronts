@@ -9,8 +9,8 @@ const StoreInfoComponent = () => {
     getIssued()
     .then(() => {
       const st = viewStore()
-      console.log(st)
-      setStore(st);
+      console.log(st.data)
+      setStore(st.data);
       console.log(store)
       setLoading(false);
     })
