@@ -1,12 +1,12 @@
-import StoreInfoComponent from "../../components/store/StoreInfoComponent";
+import StoreUpdateInfoComponent from "../../components/store/StoreUpdateInfoComponent";
 
 const UpdatePage = () => {
   return (
       <div className="p-4 w-full bg-white">
         <div className="text-3xl font-extrabold">
-          Products Add Page
+          Store Update Page
         </div>
-        <StoreInfoComponent/>
+        <StoreUpdateInfoComponent/>
       </div>
   );
 }
