@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getIssued } from '../../api/issuedApi';
-import 'CouponList.css'
+import './CouponList.css'
 
 const MyCouponListComponent = () => {
   const [coupons, setCoupons] = useState([]); // 쿠폰 목록을 저장할 상태
