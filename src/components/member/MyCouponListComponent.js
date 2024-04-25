@@ -18,7 +18,6 @@ const MyCouponListComponent = () => {
     });
   }, []);
 
-  const CouponList = ({coupons}) => {
     return (
         <div className="coupon-list">
           {coupons.map((coupon, index) => (
@@ -35,6 +34,5 @@ const MyCouponListComponent = () => {
           ))}
         </div>
     );
-  };
 }
 export default MyCouponListComponent;
