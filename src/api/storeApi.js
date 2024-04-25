@@ -11,3 +11,13 @@ export const viewStore = async () => {
   });
   return res.data;
 };
+
+export const updateStore = async (request) => {
+  const header = "Bearer " +localStorage.getItem('jwt');
+  const res = await axios.patch(`${API_SERVER_HOST}/stores`,request, {
+    headers: {
+      Authorization: header,
+    },
+  });
+  return res.data;
+};

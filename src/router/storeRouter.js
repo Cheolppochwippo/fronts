@@ -6,7 +6,8 @@ const ProductsList = lazy(() => import("../pages/store/ListPage"));
 const ProductRead = lazy(() => import("../pages/store/ReadPage"));
 const ProductAdd = lazy(() => import("../pages/store/AddPage"));
 const ProductModify = lazy(() => import("../pages/store/ModifyPage"));
-
+const StoreUpdate = lazy(()=>
+import("../pages/store/UpdatePage"))
 const storeRouter = () => {
   return [
     {
@@ -28,6 +29,11 @@ const storeRouter = () => {
     {
       path: "modify/:productId",
       element: <Suspense fallback={Loading}><ProductModify /></Suspense>
+    }
+    ,
+    {
+      path: "update",
+      element: <Suspense fallback={Loading}><StoreUpdate /></Suspense>
     }
   ];
 };
