@@ -8,7 +8,8 @@ const MyPageComponent = ({  }) => {
   useEffect(() => {
     viewUserInfo()
     .then((user) => {
-      setInfo(user.data);
+      setInfo(user);
+      console.log(user)
       setLoading(false);
     })
     .catch((error) => {
