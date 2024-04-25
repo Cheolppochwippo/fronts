@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import {viewStore} from "../../api/storeApi";
 import {getIssued} from "../../api/issuedApi";
-import ModifyComponent from "./ModifyComponent";
 const StoreInfoComponent = () => {
   const [store, setStore] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,11 +40,10 @@ const StoreInfoComponent = () => {
           </div>
         </div>
       </div>
-  )
+  );
 
-}
+};
 
 export default StoreInfoComponent;
 
-export class StoreInfoComponent {
-}
+
