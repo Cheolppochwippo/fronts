@@ -50,7 +50,7 @@ export function SuccessPage() {
   }
 
   // 결제 성공 시 메시지 표시
-  if (paymentResult?.data.orderId) {
+  if (paymentResult?.data.jsonObject.orderId) {
     return (
         <div className="payment-success-page">
           <h1 className="success-message">결제 성공</h1>
