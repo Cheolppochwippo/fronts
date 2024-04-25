@@ -9,7 +9,6 @@ const MyPageComponent = ({  }) => {
     viewUserInfo()
     .then((user) => {
       setInfo(user);
-      console.log(user,"AAAAAAAAAAAAAAAAAAAAAA")
       setLoading(false);
     })
     .catch((error) => {
@@ -19,7 +18,7 @@ const MyPageComponent = ({  }) => {
   }, []);
 
   return (
-      <div className="m-6 flex justify-center">
+      <div className="m-6 flex flex-col justify-center">
         <div style={{
           marginBottom: '1em',
           fontWeight: 'bold'
@@ -35,7 +34,7 @@ const MyPageComponent = ({  }) => {
         <div style={{
           marginBottom: '1em',
           fontWeight: 'bold'
-        }}>수신동의: {info.consent}</div>
+        }}>수신동의: {info.consent ? '동의함' : '동의하지 않음'}</div>
       </div>
   );
 };
