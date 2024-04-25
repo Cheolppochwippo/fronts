@@ -7,8 +7,7 @@ const StoreInfoComponent = () => {
   useEffect(() => {
     viewStore()
     .then((st) => {
-      setStore(st);
-      console.log(st)
+      setStore(st.data);
       setLoading(false);
     })
     .catch((error) => {
