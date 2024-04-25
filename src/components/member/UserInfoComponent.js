@@ -8,7 +8,7 @@ const MyPageComponent = ({  }) => {
   useEffect(() => {
     viewUserInfo()
     .then((user) => {
-      setInfo(user);
+      setInfo(user.data);
       setLoading(false);
     })
     .catch((error) => {
@@ -22,15 +22,19 @@ const MyPageComponent = ({  }) => {
         <div style={{
           marginBottom: '1em',
           fontWeight: 'bold'
-        }}>username: {info.username}</div>
+        }}>내정보</div>
         <div style={{
           marginBottom: '1em',
           fontWeight: 'bold'
-        }}>role: {info.role}</div>
+        }}>아이디: {info.username}</div>
         <div style={{
           marginBottom: '1em',
           fontWeight: 'bold'
-        }}>phoneNumber: {info.phoneNumber}</div>
+        }}>역할: {info.role}</div>
+        <div style={{
+          marginBottom: '1em',
+          fontWeight: 'bold'
+        }}>전화번호: {info.phoneNumber}</div>
         <div style={{
           marginBottom: '1em',
           fontWeight: 'bold'
