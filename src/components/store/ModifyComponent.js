@@ -42,9 +42,7 @@ const ModifyComponent = ({ productId }) => {
         productName: product.productName,
         info: product.info,
         realPrice: parseInt(product.realPrice),
-        price: parseInt(product.price),
         discount: parseInt(product.discount),
-        quantity: parseInt(product.quantity),
       };
       const response = await updateProduct(productId, data);
       console.log(response);
@@ -96,36 +94,12 @@ const ModifyComponent = ({ productId }) => {
         </div>
         <div className="flex justify-center">
           <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">Price</div>
-            <input
-              className="w-4/5 p-6 rounded-r border border-solid border-neutral-300 shadow-md"
-              name="price"
-              type="number"
-              value={product.price}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
             <div className="w-1/5 p-6 text-right font-bold">Discount</div>
             <input
               className="w-4/5 p-6 rounded-r border border-solid border-neutral-300 shadow-md"
               name="discount"
               type="number"
               value={product.discount}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-            <div className="w-1/5 p-6 text-right font-bold">Quantity</div>
-            <input
-              className="w-4/5 p-6 rounded-r border border-solid border-neutral-300 shadow-md"
-              name="quantity"
-              type="number"
-              value={product.quantity}
               onChange={handleInputChange}
             />
           </div>
