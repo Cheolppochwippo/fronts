@@ -9,7 +9,6 @@ export const confirmPayment = async (request) => {
       Authorization: header,
     },
   });
-  console.log(res)
   return res.data;
 };
 
