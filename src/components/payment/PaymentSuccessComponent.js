@@ -56,15 +56,24 @@ export function SuccessPage() {
           <div className="result-info">
             <div className="result-box">
               <div className="result-title">주문명</div>
-              <div className="textbox">{paymentResult?.data.orderName}</div>
+              <div
+                  className="textbox">{paymentResult?.data.jsonObject.orderName}</div>
             </div>
             <div className="result-box">
               <div className="result-title">주문 번호</div>
-              <div className="textbox">{paymentResult?.data.orderId}</div>
+              <div
+                  className="textbox">{paymentResult?.data.jsonObject.orderId}</div>
             </div>
             <div className="result-box">
               <div className="result-title">결제 금액:</div>
-              <div className="textbox">{paymentResult?.data.totalAmount}원
+              <div
+                  className="textbox">{paymentResult?.data.jsonObject.totalAmount}원
+              </div>
+            </div>
+            <div className="result-box">
+              <div className="result-title">배송 주소:</div>
+              <div
+                  className="textbox">{paymentResult?.data.address}
               </div>
             </div>
           </div>
