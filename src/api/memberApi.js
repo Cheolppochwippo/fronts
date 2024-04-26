@@ -71,6 +71,20 @@ export const updateUserInfo = async (updatedInfo) => {
   return res.data;
 };
 
+
+export const updateUserRole = async () => {
+  const token = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.patch(
+    `${API_SERVER_HOST}/auth/role`,
+    {},
+    {
+      headers: {
+        Authorization: token,
+      },
+    }
+  );
+  return res.data;
+};
 // export const loginPost = async (loginParam) => {
 
 //   const header = {headers: {"Content-Type": "x-www-form-urlencoded"}}
@@ -78,9 +92,6 @@ export const updateUserInfo = async (updatedInfo) => {
 //   const form = new FormData()
 //   form.append('username', loginParam.username)
 //   form.append('password', loginParam.password)
-
-
-
 
 
 // }
