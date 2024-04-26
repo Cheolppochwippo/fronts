@@ -59,15 +59,15 @@ export const viewUserInfo = async () => {
 
   return res.data
 }
-export const updateUserInfo = async (updatedInfo) => {
-  const header = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("jwt"),
-    },
-  };
 
-  const res = await axios.patch(`${host}/mypage`, updatedInfo, header);
+export const updateUserInfo = async (updatedInfo) => {
+  
+  const token = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.patch(`${host}/mypage`, updatedInfo,{
+    headers: {
+      Authorization: token,
+    },
+  });
   return res.data;
 };
 

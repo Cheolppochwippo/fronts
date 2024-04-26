@@ -93,7 +93,7 @@ function TotalOrderListComponent() {
           )}
         </div>
 
-        {/* 페이지 버튼들 */}
+        페이지 버튼들
         <div className="pagination">
           {/* 이전 페이지 버튼 */}
           <button className="page-button" onClick={goToPrevPage}>&laquo; 이전</button>

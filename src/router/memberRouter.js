@@ -7,6 +7,7 @@ const LogoutPage = lazy(() => import("../pages/member/LogoutPage"));
 
 const SignupPage = lazy(() => import("../pages/member/SignupPage"));
 const MyPage = lazy(() => import("../pages/member/MyPage"));
+const MyPageUpdate = lazy(() => import("../pages/member/MypageUpdatePage"));
 
 const memberRouter = () => {
   return [
@@ -39,6 +40,14 @@ const memberRouter = () => {
       element: (
         <Suspense fallback={Loading}>
           <MyPage />
+        </Suspense>
+      ),
+    },
+    {
+      path: "update",
+      element: (
+        <Suspense fallback={Loading}>
+          <MyPageUpdate />
         </Suspense>
       ),
     },
