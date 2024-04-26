@@ -28,14 +28,17 @@ const MyPageComponent = () => {
     try {
       const response = await updateUserRole();
       // 성공적으로 역할이 변경되었을 때 추가 로직 구현
-      alert("성공");
+      alert("role이 seller로 변경되었습니다. 다시 로그인 해주세요.");
       console.log("Role update success:", response);
+      // 필요한 경우 페이지 새로고침 또는 다른 작업 수행
+      window.location.reload();
     } catch (error) {
       alert("실패");
       console.error("Error updating role:", error);
       // 역할 변경 실패 시 처리 로직 구현
     }
   };
+
 
   return (
     <div className="m-6 flex flex-col justify-center">

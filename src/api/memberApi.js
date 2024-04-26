@@ -85,6 +85,23 @@ export const updateUserRole = async () => {
   );
   return res.data;
 };
+
+// export const updateUserRole = async () => {
+//   const token = "Bearer " + localStorage.getItem("jwt").split("Bearer ")[1];
+//   const res = await axios.post(
+//     `${API_SERVER_HOST}/auth/changeRole`,
+//     {},
+//     {
+//       headers: {
+//         Authorization: token,
+//       },
+//     }
+//   );
+//   if (res.data.data) {
+//     localStorage.setItem("jwt", res.data.data);
+//   }
+//   return res.data;
+// };
 // export const loginPost = async (loginParam) => {
 
 //   const header = {headers: {"Content-Type": "x-www-form-urlencoded"}}
