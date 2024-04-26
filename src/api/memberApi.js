@@ -1,3 +1,4 @@
+//memberApi.js
 import axios from "axios"
 
 export const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST;
@@ -58,6 +59,17 @@ export const viewUserInfo = async () => {
 
   return res.data
 }
+export const updateUserInfo = async (updatedInfo) => {
+  const header = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("jwt"),
+    },
+  };
+
+  const res = await axios.patch(`${host}/mypage`, updatedInfo, header);
+  return res.data;
+};
 
 // export const loginPost = async (loginParam) => {
 
