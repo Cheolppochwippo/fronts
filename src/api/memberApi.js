@@ -35,7 +35,6 @@ export const loginPost = async (data) => {
 
 }
 
-
 export const signupPost = async (data) => {
   const body = {
     username : data.username,
