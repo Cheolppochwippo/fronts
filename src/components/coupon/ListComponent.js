@@ -50,7 +50,7 @@ const ListComponent = () => {
             <span className="action" onClick={() => handleIssueCoupon(coupon.couponId)}>쿠폰받기</span>
           </div>
           <div className="coupon-period">사용 기한: {coupon.effectiveDate.substring(0, 10)}</div>
-          <div className="coupon-period">남은 쿠폰 개수: {coupon.amount}개</div>
+          {/* <div className="coupon-period">남은 쿠폰 개수: {coupon.amount}개</div> */}
         </div>
       ))}
     </div>
