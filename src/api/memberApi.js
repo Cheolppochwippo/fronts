@@ -13,7 +13,7 @@ export const signup = async (signupParam) => {
       role: signupParam.role,
     };
   
-    const res = await axios.post(`${host}/signup`, body, header);
+    const res = await axios.post(`${host}/signup/userTest`, body, header);
     return res.data;
   };
 
@@ -72,24 +72,10 @@ export const updateUserInfo = async (updatedInfo) => {
 };
 
 
-export const updateUserRole = async () => {
-  const token = "Bearer " + localStorage.getItem("jwt");
-  const res = await axios.patch(
-    `${API_SERVER_HOST}/auth/role`,
-    {},
-    {
-      headers: {
-        Authorization: token,
-      },
-    }
-  );
-  return res.data;
-};
-
 // export const updateUserRole = async () => {
-//   const token = "Bearer " + localStorage.getItem("jwt").split("Bearer ")[1];
-//   const res = await axios.post(
-//     `${API_SERVER_HOST}/auth/changeRole`,
+//   const token = "Bearer " + localStorage.getItem("jwt");
+//   const res = await axios.patch(
+//     `${API_SERVER_HOST}/auth/role`,
 //     {},
 //     {
 //       headers: {
@@ -97,11 +83,26 @@ export const updateUserRole = async () => {
 //       },
 //     }
 //   );
-//   if (res.data.data) {
-//     localStorage.setItem("jwt", res.data.data);
-//   }
 //   return res.data;
 // };
+
+export const updateUserRole = async () => {
+  const token = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.post(
+    `${API_SERVER_HOST}/auth/changeRole`,
+    {},
+    {
+      headers: {
+        Authorization: token,
+      },
+    }
+  );
+  if (res.data.data) {
+    const role = res.data.data.split("Bearer ")[1]
+    localStorage.setItem("jwt", role);
+  }
+  return res.data;
+};
 // export const loginPost = async (loginParam) => {
 
 //   const header = {headers: {"Content-Type": "x-www-form-urlencoded"}}

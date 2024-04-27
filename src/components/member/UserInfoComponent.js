@@ -28,7 +28,7 @@ const MyPageComponent = () => {
     try {
       const response = await updateUserRole();
       // 성공적으로 역할이 변경되었을 때 추가 로직 구현
-      alert("role이 seller로 변경되었습니다. 다시 로그인 해주세요.");
+      alert("role이 update 되었습니다!");
       console.log("Role update success:", response);
       // 필요한 경우 페이지 새로고침 또는 다른 작업 수행
       window.location.reload();
@@ -65,7 +65,7 @@ const MyPageComponent = () => {
         className="w-full py-2 px-4 bg-purple-600 text-white rounded hover:bg-purple-700 mt-2"
         onClick={handleUpdateRole}
       >
-        seller로 변경
+        role 변경 하기
       </button>
     </div>
   );
