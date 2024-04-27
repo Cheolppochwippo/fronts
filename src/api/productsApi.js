@@ -18,6 +18,20 @@ export const getMyOne = async (pno) => {
   return res.data;
 };
 
+//상품검색
+export const searchProduct = async (keyword) => {
+  try {
+    const response = await axios.get(`${API_SERVER_HOST}/products/_search`, {
+      params: {
+        keyword: keyword,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("상품 검색 실패:", error);
+    throw error;
+  }
+};
 // export const getList = async ({ page, size }) => {
 //     const response = await axios.get(`${host}`, {
 //       params: {
