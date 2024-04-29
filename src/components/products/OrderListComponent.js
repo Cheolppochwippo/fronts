@@ -2,63 +2,55 @@ import React, { useEffect, useState } from 'react';
 import { getStateOrder } from '../../api/totalOrderApi';
 
 const OrderListComponent = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    const fetchCartItems = async () => {
+    const fetchOrders = async () => {
       try {
         const data = await getStateOrder();
-        setCartItems(data.data);
-        setTotalPrice(calculateTotalPrice(data.data));
+        setOrders(data);
+        setTotalPrice(calculateTotalPrice(data));
         setLoading(false);
       } catch (error) {
-        console.error('Failed to fetch cart items:', error);
+        console.error('Failed to fetch orders:', error);
       }
     };
-    fetchCartItems();
+    fetchOrders();
   }, []);
 
-  const calculateTotalPrice = (items) => {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+  const calculateTotalPrice = (orders) => {
+    return orders.reduce((total, order) => total + (order.price * order.quantity), 0);
   };
 
- 
-
   if (loading) {
-    return <div>Loading...</div>; // 로딩 중일 때 표시할 내용
+    return <div>Loading...</div>;
   }
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Cart Items</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+      <h2 className="text-2xl font-bold mb-4">주문 목록</h2>
+      {orders.length === 0 ? (
+        <p>주문 내역이 없습니다.</p>
       ) : (
         <>
           <ul className="divide-y divide-gray-200">
-            {cartItems.map((item) => (
-              <li key={item.orderId} className="py-4 flex items-center">
+            {orders.map((order) => (
+              <li key={order.orderId} className="py-4 flex items-center">
                 <div className="w-2/3 flex items-center">
                   <div>
-                    <p className="text-lg font-semibold">{item.productName}</p>
-                    <p className="text-gray-600">Price: {item.price}</p>
+                    <p className="text-lg font-semibold">{order.productName}</p>
+                    <p className="text-gray-600">가격: {order.price.toLocaleString()} 원</p>
+                    <p className="text-gray-600">수량: {order.quantity}</p>
                   </div>
                 </div>
               </li>
             ))}
           </ul>
           <div className="mt-8 flex justify-end">
-            <div className="text-xlg font-bold ">
-              Total Price: {totalPrice.toLocaleString()} 원
-            </div>
+            <div className="text-xlg font-bold ">총 주문 금액: {totalPrice.toLocaleString()} 원</div>
           </div>
-          {/* <div className="mt-10 flex justify-end ">
-            <button className="px-4 py-2 bg-orange-400 text-white rounded-md">
-              주문하기
-            </button>
-          </div> */}
         </>
       )}
     </div>
