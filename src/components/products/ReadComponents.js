@@ -7,6 +7,7 @@ import useCustomCart from "../../hooks/useCustomCart";
 import useCustomLogin from "../../hooks/useCustomLogin";
 import { addToCart } from "../../api/cartApi";
 import { useNavigate } from "react-router-dom";
+import { createOrderByDirect } from "../../api/totalOrderApi";
 
 const host = API_SERVER_HOST;
 
@@ -98,6 +99,17 @@ const ReadComponent = ({ productId }) => {
           // 에러 처리
         });
       }
+    }
+  };
+
+  const handleClickBuyNow = async () => {
+    try {
+      const response = await createOrderByDirect(productId, quantity);
+      console.log("Order created successfully:", response);
+      navigate("/totalOrder");
+    } catch (error) {
+      console.error("Error creating order:", error);
+      // 에러 처리 로직 추가
     }
   };
 
@@ -204,7 +216,7 @@ const ReadComponent = ({ productId }) => {
           <button
               type="button"
               className="inline-block rounded p-4 m-2 text-xl w-32  text-white bg-green-500"
-              onClick={handleClickAddCart}
+              onClick={handleClickBuyNow}
           >
             즉시 구매 
           </button>
