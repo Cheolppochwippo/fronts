@@ -7,7 +7,7 @@ import useCustomCart from "../../hooks/useCustomCart";
 import useCustomLogin from "../../hooks/useCustomLogin";
 import { addToCart } from "../../api/cartApi";
 import { useNavigate } from "react-router-dom";
-import { createOrderByDirect } from "../../api/totalOrderApi";
+import { createOrderByCart, createOrderByDirect } from "../../api/totalOrderApi";
 
 const host = API_SERVER_HOST;
 
@@ -64,6 +64,7 @@ const ReadComponent = ({ productId }) => {
           return;
         }
         addToCart(productId, addedItem.qty + quantity)
+        createOrderByCart()
         .then((data) => {
           console.log("Add to cart success:", data);
           if (
@@ -80,6 +81,7 @@ const ReadComponent = ({ productId }) => {
         });
       } else {
         addToCart(productId, quantity)
+        createOrderByCart()
         .then((data) => {
           console.log("Add to cart success:", data);
           //alert("상품이 장바구니에 담겼습니다.");

@@ -51,3 +51,23 @@ export const createOrderByDirect = async (productId, quantity) => {
   );
   return res.data;
 };
+
+export const createOrderByCart = async () => {
+  const header = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.post(`${API_SERVER_HOST}/carts/to-order`, null, {
+    headers: {
+      Authorization: header,
+    },
+  });
+  return res.data;
+};
+
+export const getStateOrder = async () => {
+  const header = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.get(`${API_SERVER_HOST}/orders/total`, {
+    headers: {
+      Authorization: header,
+    },
+  });
+  return res.data.data;
+};
