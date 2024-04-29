@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getStateOrder } from '../../api/totalOrderApi';
 
-const CartItemComponent = () => {
+const OrderListComponent = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -65,4 +65,4 @@ const CartItemComponent = () => {
   );
 };
 
-export default CartItemComponent;
+export default OrderListComponent;
