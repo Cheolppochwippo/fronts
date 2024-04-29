@@ -27,7 +27,7 @@ const ListComponent = () => {
       }
     };
     fetchData();
-  }, [page, searchKeyword]);
+  }, [page]);
 
   const handleSearchSubmit = async () => {
     setFetching(true);
