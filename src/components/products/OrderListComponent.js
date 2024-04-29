@@ -49,7 +49,9 @@ const OrderListComponent = () => {
             ))}
           </ul>
           <div className="mt-8 flex justify-end">
-            <div className="text-xlg font-bold ">총 주문 금액: {totalPrice.toLocaleString()} 원</div>
+            <div className="text-xlg font-bold ">
+              총 주문 금액: {totalPrice.toLocaleString()} 원
+            </div>
           </div>
         </>
       )}

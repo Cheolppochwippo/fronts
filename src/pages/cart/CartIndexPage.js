@@ -6,9 +6,7 @@ const IndexPage = () => {
 
   return (
       <BasicLayout>
-        <div className="text-black font-extrabold -mt-10">
-          Cart
-        </div>
+      
         {/* <div className="flex flex-wrap w-full "> */}
           <Outlet/>
         {/* </div> */}

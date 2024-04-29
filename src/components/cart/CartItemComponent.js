@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { getCartItems, updateCartItem, removeFromCart } from '../../api/cartApi';
+import React, { useEffect, useState } from "react";
+import {
+  getCartItems,
+  updateCartItem,
+  removeFromCart,
+} from "../../api/cartApi";
 
 const CartItemComponent = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -14,7 +18,7 @@ const CartItemComponent = () => {
         setTotalPrice(calculateTotalPrice(data.data));
         setLoading(false);
       } catch (error) {
-        console.error('Failed to fetch cart items:', error);
+        console.error("Failed to fetch cart items:", error);
       }
     };
     fetchCartItems();
@@ -33,18 +37,20 @@ const CartItemComponent = () => {
       setCartItems(updatedCartItems);
       setTotalPrice(calculateTotalPrice(updatedCartItems));
     } catch (error) {
-      console.error('Failed to update cart item:', error);
+      console.error("Failed to update cart item:", error);
     }
   };
 
   const handleRemoveFromCart = async (orderId) => {
     try {
       await removeFromCart(orderId);
-      const updatedCartItems = cartItems.filter((item) => item.orderId !== orderId);
+      const updatedCartItems = cartItems.filter(
+        (item) => item.orderId !== orderId
+      );
       setCartItems(updatedCartItems);
       setTotalPrice(calculateTotalPrice(updatedCartItems));
     } catch (error) {
-      console.error('Failed to remove cart item:', error);
+      console.error("Failed to remove cart item:", error);
     }
   };
 
@@ -54,9 +60,9 @@ const CartItemComponent = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Cart Items</h2>
+      <h2 className="text-2xl font-bold mb-4">장바구니 목록</h2>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>카트에 담긴 물건이 없습니다.</p>
       ) : (
         <>
           <ul className="divide-y divide-gray-200">
@@ -72,14 +78,18 @@ const CartItemComponent = () => {
                   <div className="flex items-center">
                     <button
                       className="m-1 p-1 text-2xl bg-orange-500 text-white w-8 rounded-lg"
-                      onClick={() => handleChangeQuantity(item.orderId, item.quantity - 1)}
+                      onClick={() =>
+                        handleChangeQuantity(item.orderId, item.quantity - 1)
+                      }
                     >
                       -
                     </button>
                     <span className="mx-2">{item.quantity}</span>
                     <button
                       className="m-1 p-1 text-2xl bg-orange-500 text-white w-8 rounded-lg"
-                      onClick={() => handleChangeQuantity(item.orderId, item.quantity + 1)}
+                      onClick={() =>
+                        handleChangeQuantity(item.orderId, item.quantity + 1)
+                      }
                     >
                       +
                     </button>
@@ -96,7 +106,7 @@ const CartItemComponent = () => {
           </ul>
           <div className="mt-8 flex justify-end">
             <div className="text-xlg font-bold ">
-              Total Price: {totalPrice.toLocaleString()} 원
+              총 주문 금액: {totalPrice.toLocaleString()} 원
             </div>
           </div>
           {/* <div className="mt-10 flex justify-end ">
