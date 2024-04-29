@@ -9,7 +9,8 @@ const TotalOrderPage = () => {
       <div className="flex-1 flex justify-start">
         <div className="w-full max-w-8xl bg-white shadow-md rounded-lg p-4 ml-0">
           <div className="p-4">
-            <CartItemComponent />
+            {/* <CartItemComponent /> */}
+            <TotalOrderComponent/>
           </div>
           <div className="p-4 bg-gray-100">
             <TotalOrderComponent />
