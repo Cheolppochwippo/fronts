@@ -4,11 +4,13 @@ import OrderCartComponent from '../../components/cart/OrderCartComponent';
 import BasicLayout from '../../layouts/BasicLayout';
 import CartItemComponent from '../../components/cart/CartItemComponent';
 import { useNavigate } from 'react-router-dom';
+import { createOrderByCart } from '../../api/totalOrderApi';
 
 
 const OrderCartPage = () => {
   const navigate = useNavigate();
   const handleClickPayments = () => {
+    createOrderByCart();
     navigate(`/totalOrder`);
   };
 

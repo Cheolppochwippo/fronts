@@ -1,6 +1,5 @@
 import BasicMenu from "../../menus/BasicMenu";
 import TotalOrderComponent from "../../components/payment/TotalOrderComponent";
-import CartItemComponent from "../../components/cart/CartItemComponent";
 import OrderListComponent from "../../components/products/OrderListComponent";
 
 const TotalOrderPage = () => {
