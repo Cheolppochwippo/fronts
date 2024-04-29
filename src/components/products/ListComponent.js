@@ -70,10 +70,10 @@ const ListComponent = () => {
         </div>
         {serverData.map((product, index) => (
           <Link
-            to={`../read/${product.id}`}
-            key={product.id}
-            className="w-1/2 md:w-1/5 p-1 rounded shadow-md border-2"
-          >
+          to={`../read/${product.productId ? product.productId : product.id}`}
+          key={product.id}
+          className="w-1/2 md:w-1/5 p-1 rounded shadow-md border-2"
+        >
             <div className="flex flex-col h-full">
               <div className="relative w-full h-100">
                 {product.imageUrls && product.imageUrls.length > 0 ? (
