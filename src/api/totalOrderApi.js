@@ -1,3 +1,4 @@
+//totalOrederApi.js
 import axios from "axios";
 
 export const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST;
@@ -31,5 +32,22 @@ export const getTotalOrder = async (totalOrderId) => {
       Authorization: header,
     },
   });
+  return res.data;
+};
+
+export const createOrderByDirect = async (productId, quantity) => {
+  const header = "Bearer " + localStorage.getItem("jwt");
+  const res = await axios.post(
+    `${API_SERVER_HOST}/products/${productId}/to-order`,
+    null,
+    {
+      headers: {
+        Authorization: header,
+      },
+      params: {
+        quantity,
+      },
+    }
+  );
   return res.data;
 };
