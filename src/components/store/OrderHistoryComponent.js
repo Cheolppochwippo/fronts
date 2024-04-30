@@ -11,7 +11,7 @@ const OrderHistoryComponent = () => {
  useEffect(() => {
    const fetchOrders = async () => {
      try {
-       const addedOrder = await showOrderInStore({year, month});
+       const addedOrder = await showOrderInStore({ year: Number(year), month: Number(month) });
        setOrders(addedOrder.data);
      } catch (error) {
        console.error('Error fetching orders:', error);
