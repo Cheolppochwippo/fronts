@@ -33,8 +33,9 @@ const LoginComponent = () => {
 
   return (
     <div className="max-w-xl mx-auto my-10 p-6 border border-gray-300 rounded-lg">
-      <h2 className="text-2xl font-bold mb-6 text-center">로그인</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">로그인</h2>      
       <div className="mb-4 px-6">
+        <div>                                                                                                                                            </div>
         <input
           className="w-full p-2 border border-gray-300 rounded"
           name="username"

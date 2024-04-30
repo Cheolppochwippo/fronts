@@ -26,8 +26,8 @@ const SignupComponent = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto my-10 p-6 border border-gray-300 rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">회원가입</h2>
+<div className="max-w-md mx-auto my-10 p-6 border border-gray-300 rounded-lg max-h-screen overflow-y-auto">
+  <h2 className="text-2xl font-bold mb-4">회원가입</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="username" className="block font-bold mb-2">
