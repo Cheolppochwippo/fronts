@@ -25,7 +25,7 @@ export const updateStore = async (request) => {
 
 export const showOrderInStore = async (request) => {
   const header = "Bearer " + localStorage.getItem('jwt');
-  const res = await axios.get(`${API_SERVER_HOST}/store/orders`, request, {
+  const res = await axios.get(`${API_SERVER_HOST}/store/orders`, {"year":2024,"month":4}, {
     headers: {
       Authorization: header,
     },
