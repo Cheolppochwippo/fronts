@@ -103,6 +103,10 @@ const ReadComponent = ({ productId }) => {
   };
 
   const handleClickBuyNow = async () => {
+    if (!isLoggedIn) {
+      navigate("/member/login");
+      return;
+    } else
     try {
       const response = await createOrderByDirect(productId, quantity);
       console.log("Order created successfully:", response);
