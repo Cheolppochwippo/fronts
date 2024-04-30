@@ -10,6 +10,7 @@ export default function App() {
 
   useEffect(() => {
     const initializePaymentWidget = async () => {
+      console.log(TOSS_ID,"AAAAAAAAAAAA",TOSS_PW)
       const paymentWidget = await loadPaymentWidget(TOSS_ID, TOSS_PW);
       paymentWidgetRef.current = paymentWidget;
       paymentWidget.renderPaymentMethods("#payment-widget", totalOrder.data["priceAmount"]);
