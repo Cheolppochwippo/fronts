@@ -35,9 +35,12 @@ export default function App() {
   };
 
   return (
-      <div className="App" style={{ width: '100%', height: '100%' }}>
-        <h1>주문서</h1>
-        <div id="payment-widget" /> {/* 위젯 */}
+      <div className="App" style={{width: '100%', height: '100%'}}>
+        <h1>04/29부터 tosspayment 내부이슈로 인해 결제 위젯이 막힌 상황입니다. 양해 부탁드립니다!</h1>
+        <a href="https://techchat.tosspayments.com/m/1234670227913179267">https://techchat.tosspayments.com/m/1234670227913179267</a>
+        <h1>04/29부터 tosspayment 내부이슈로 인해 결제 위젯이 막힌 상황입니다. 양해 부탁드립니다!</h1>
+        <div id="payment-widget"/>
+        {/* 위젯 */}
         <button
             onClick={handlePayment}
             style={{
@@ -50,7 +53,8 @@ export default function App() {
             }}
         >
           결제하기
-        </button> {/* 버튼 */}
+        </button>
+        {/* 버튼 */}
       </div>
   );
 }
