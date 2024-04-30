@@ -1,3 +1,4 @@
+//storeApi.js
 import axios from "axios";
 
 export const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST;
@@ -21,3 +22,14 @@ export const updateStore = async (request) => {
   });
   return res.data;
 };
+
+export const showOrderInStore = async (year, month) => {
+  const header = "Bearer " + localStorage.getItem('jwt');
+  const requestBody = { year, month };
+  const res = await axios.get(`${API_SERVER_HOST}/store/orders`, requestBody, {
+    headers: {
+      Authorization: header,
+    },
+  });
+  return res.data;
+ };

@@ -18,6 +18,9 @@ const StoreIndexPage = () => {
   const handleClickUpdate = useCallback(() => {
     navigate({ pathname:'update' })
   })
+  const handleClickhistory = useCallback(() => {
+    navigate({ pathname:'history' })
+  })
 
   return ( 
     <BasicLayout>
@@ -41,6 +44,11 @@ const StoreIndexPage = () => {
             className="text-xl m-1 p-2 w-20 font-extrabold  text-center underline"
             onClick={handleClickUpdate}>
           UPDATE
+        </div>
+        <div
+            className="text-xl m-1 p-2 w-20 font-extrabold  text-center underline"
+            onClick={handleClickhistory}>
+           상점 주문 내역
         </div>
         <div>
           <StoreInfoComponent/>
